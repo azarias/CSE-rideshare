@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>CSE Ride Share</title>
+	<!--<link rel="stylesheet" href="rides_style.css"> Add when deployed -->
+</head>
+<body>
+	<h3>{% if message.len > 0 %} {{ message }} {% else %} Rides {% endif %}</h3>
+	<div class="main_frame">
+        {% if rides %}
+            <p>Found {{rides|length}} ride{{ rides|pluralize}}. </p>
+            <ul>
+                {%for ride in rides %}
+                <li>To: {{ride.dest}} On: {{ride.date }} Driver: {{ride.driver.uniquename}} Note: {{ride.note}}</li>
+                {%endfor%}
+            </ul>
+        {% else %}
+            <p>Sorry, no rides were found for your date.</P>
+        {% endif %}
+    </div>
+</body>
+</html>

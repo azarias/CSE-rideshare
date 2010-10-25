@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>CSE Ride Share</title>
+	<!--<link rel="stylesheet" href="rides_style.css"> Add when deployed -->
+</head>
+<body>
+	<h3>{% if message.len > 0 %} {{ message }} {% else %} Sign up {% endif %}</h3>
+	<div class="main_frame">
+        {% if form.errors %}
+            <p>
+            Please correct the error{{form.errors|pluralize }} below.
+            </p>
+        {% endif %}
+        
+        <form action="" method="post">
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="Submit">
+	</div>
+	
+</body>
+</html>

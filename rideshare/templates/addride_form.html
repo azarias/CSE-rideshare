@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>CSE Ride Share</title>
+	<!--<link rel="stylesheet" href="rides_style.css"> Add when deployed -->
+</head>
+<body>
+	<h3>{% if message.len > 0 %} {{ message }} {% else %} Add ride {% endif %}</h3>
+	<div class="main_frame">
+        {% if form.errors %}
+            <p>
+            Please correct the error{{form.errors|pluralize }} below.
+            </p>
+        {% endif %}
+        
+        <form action="" method="post">
+            <div class="field">
+                {{ form.date.errors }}
+                <label for="id_date">Date: </label>
+                {{ form.date }}
+            </div>
+ 
+             <div class="field">
+                {{ form.dest.errors }}
+                <label for="id_dest">Destination: </label>
+                {{ form.dest }}
+            </div>
+            
+             <div class="field">
+                {{ form.uniquename.errors }}
+                <label for="id_uniquename">Uniquename: </label>
+                {{ form.uniquename }}
+            </div>   
+     
+             <div class="field">
+                {{ form.space.errors }}
+                <label for="id_space">Space: </label>
+                {{ form.space }}
+            </div> 
+            
+             <div class="field">
+                {{ form.note.errors }}
+                <label for="id_note">Notes: </label>
+                {{ form.note }}
+            </div>             
+
+            <input type="submit" value="Submit">
+        </form>
+	</div>
+	
+</body>
+</html>
