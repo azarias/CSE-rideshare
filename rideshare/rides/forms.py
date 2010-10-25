@@ -6,7 +6,7 @@ from rideshare.rides.models import User
 
 DEST_CHOICES = [
                  ('Ann Arbor', 'Ann Arbor'),
-                 ('Ann Arbor', 'DTW'),
+                 ('DTW', 'DTW'),
                ]
 class AddUserForm(forms.Form):
     fname       = forms.CharField(max_length=30, label="First Name")
